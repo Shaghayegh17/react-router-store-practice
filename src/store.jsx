@@ -11,6 +11,25 @@ const navLinkStyle = ({ isActive }) => ({
   alignItems: "center",
   gap: "10px",
 });
+const StyledNavLink = styled(NavLink)`
+color:#A9A9A9;
+font-weight:normal;
+background-color:white;
+text-decoration:underline;
+padding:8px 15px;
+border-radius:6px;
+display:flex;
+align-items:center;
+gap:10px;
+
+&.active{
+color:#00FFFF;
+font-weigt:bold;
+background-color:#000;
+text-decoration:none;
+}
+` 
+
 export function Home() {
   return (
     <>
@@ -23,12 +42,12 @@ export function Store() {
     <>
       <StoreTitle>فروشگاه</StoreTitle>
       <SorteNav>
-        <NavLink style={navLinkStyle} to="products">
+        <StyledNavLink  to="products">
           محصولات
-        </NavLink>{" "}
-        <NavLink to="aboutus" style={navLinkStyle}>
+        </StyledNavLink>{" "}
+        <StyledNavLink to="aboutus" >
           درباره ما
-        </NavLink>
+        </StyledNavLink>
       </SorteNav>
       <Outlet />
     </>

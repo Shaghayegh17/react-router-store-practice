@@ -11,24 +11,38 @@ import {
   NotFound,
   Address,
 } from "./store";
-const navLinkStyleMain = ({ isActive }) => ({
-  color: isActive ? "#00FFFF" : "#A9A9A9",
-  fontWeight: isActive ? "bold" : "normal",
-  textDecoration: isActive ? "none" : "underline",
-  padding: "5px 10px",
-});
+
+
+const StyledNavLinkMain = styled(NavLink)`
+color:#A9A9A9;
+font-weight:normal;
+background-color:white;
+text-decoration:underline;
+padding:8px 15px;
+border-radius:6px;
+display:flex;
+align-items:center;
+gap:10px;
+
+&.active{
+color:#00FFFF;
+font-weigt:bold;
+background-color:#000;
+text-decoration:none;
+}
+` 
 
 function App() {
   return (
     <>
       <>
         <nav>
-          <NavLink style={navLinkStyleMain} to="/">
+          <StyledNavLinkMain  to="/">
             صفحه اصلی
-          </NavLink>{" "}
-          <NavLink style={navLinkStyleMain} to="/shaghayeghstore">
+          </StyledNavLinkMain >{" "}
+          <StyledNavLinkMain  to="/shaghayeghstore">
             فروشگاه شقایق
-          </NavLink>
+          </StyledNavLinkMain >
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />
